@@ -11,7 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+import { ReactComponent as Brand } from "../../../asset/brand.svg";
 
 const pages = ["My Album", "Print"];
 const settings = ["Logout"];
@@ -43,7 +43,9 @@ const Header = () => {
 		<AppBar position="static">
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
-					<AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+					<Box sx={{ display: { xs: "none", md: "flex" }, mr: 3 }}>
+						<Brand />
+					</Box>
 					<Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
 						<IconButton
 							size="large"
@@ -78,31 +80,19 @@ const Header = () => {
 							))}
 						</Menu>
 					</Box>
-					<AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-					<Typography
-						variant="h5"
-						noWrap
-						component="a"
-						href=""
-						sx={{
-							mr: 2,
-							display: { xs: "flex", md: "none" },
-							flexGrow: 1,
-							fontFamily: "monospace",
-							fontWeight: 700,
-							letterSpacing: ".3rem",
-							color: "inherit",
-							textDecoration: "none",
-						}}>
-						LOGO
-					</Typography>
 					<Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
 						{pages.map((page) => (
 							<Button
 								key={page}
 								onClick={handleCloseNavMenu}
-								sx={{ my: 2, color: "white", display: "block" }}>
-								{page}
+								sx={{ my: 2, color: "white", display: "block", mr: 3 }}>
+								<Typography
+									textAlign="center"
+									fontWeight="700"
+									fontSize="1.25rem"
+									textTransform="none">
+									{page}
+								</Typography>
 							</Button>
 						))}
 					</Box>
@@ -110,7 +100,7 @@ const Header = () => {
 					<Box sx={{ flexGrow: 0 }}>
 						<Tooltip title="Open settings">
 							<IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-								<Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+								<Avatar alt="Avatar" src="/static/images/avatar/2.jpg" />
 							</IconButton>
 						</Tooltip>
 						<Menu
