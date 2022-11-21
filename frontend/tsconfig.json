@@ -1,5 +1,16 @@
 {
 	"extends": "@tsconfig/node16/tsconfig.json",
+	"compilerOptions": {
+		"jsx": "react",
+		"baseUrl": "./src",
+		"paths": {
+			"@component/*": ["component/*"],
+			"@asset/*": ["asset/*"],
+			"@config/*": ["config/*"],
+			"@lib/*": ["lib/*"],
+			"@pages/*": ["pages/*"]
+		}
+	},
 	"exclude": ["node_modules"],
 	"include": ["src/**/*.ts", "src/**/*.tsx"]
 }
