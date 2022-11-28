@@ -1,57 +1,81 @@
 {
-	"name": "photo-album",
-	"version": "0.1.0",
-	"private": true,
-	"engines": {
-		"node": "16",
-		"npm": "8",
-		"yarn": "please use npm"
-	},
-	"dependencies": {
-		"@emotion/react": "^11.10.5",
-		"@emotion/styled": "^11.10.5",
-		"@mui/icons-material": "^5.10.14",
-		"@mui/material": "^5.10.14",
-		"@testing-library/jest-dom": "^5.16.5",
-		"@testing-library/react": "^13.4.0",
-		"@testing-library/user-event": "^13.5.0",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0",
-		"react-router-dom": "^6.4.3",
-		"react-scripts": "^5.0.1",
-		"web-vitals": "^2.1.4"
-	},
-	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"type-check": "tsc --pretty --noEmit",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
-	},
-	"eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest"
-		]
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	},
-	"devDependencies": {
-		"@tsconfig/node16": "^1.0.3",
-		"@types/jest": "^29.2.3",
-		"@types/node": "^18.11.9",
-		"@types/react": "^18.0.25",
-		"@types/react-dom": "^18.0.9",
-		"typescript": "^4.9.3"
-	}
+  "name": "photo-album",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "16",
+    "npm": "8",
+    "yarn": "please use npm"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.14",
+    "@mui/material": "^5.10.14",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.3",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "prepare": "cd .. && husky install frontend/.husky",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "type-check": "tsc --pretty --noEmit",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "format": "prettier --write .",
+    "lint": "eslint . --ext ts --ext tsx --ext js"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js}": [
+      "npm run lint",
+      "npm run format",
+      "eslint --cache --fix"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@tsconfig/node16": "^1.0.3",
+    "@types/jest": "^29.2.3",
+    "@types/node": "^18.11.9",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
+    "eslint": "^8.28.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.31.11",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.4",
+    "prettier": "2.8.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "typescript": "^4.9.3"
+  }
 }
